@@ -1,9 +1,17 @@
+import React, { Fragment } from "react";
 import './App.css';
 
+
+//components
+
+import Footer from "./components/Footer.js";
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Fragment>
+      <div className="container">
+        <Footer />
+      </div>
+    </Fragment>
   );
 }
 
