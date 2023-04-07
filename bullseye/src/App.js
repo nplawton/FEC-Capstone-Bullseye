@@ -4,7 +4,7 @@ import './App.css';
 
 //components
 
-import Footer from "./components/Footer.js";
+import Footer from "./components/Footer";
 function App() {
   return (
     <Fragment>
