@@ -7,12 +7,20 @@ app.use(express.json());
 app.use(cors());
 
 const pool = new Pool({
-  user: 'postgres',
-  host: '127.0.0.1',
-  database: 'bullseye',
-  password: 'bullseye',
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+      rejectUnauthorized: false
+  }
 });
+
+
+// const pool = new Pool({
+//   user: 'postgres',
+//   host: '127.0.0.1',
+//   database: 'bullseye',
+//   password: 'bullseye',
+//   port: 5432,
+// });
 
 // Get all accounts
 app.get('/accounts', async (req, res) => {

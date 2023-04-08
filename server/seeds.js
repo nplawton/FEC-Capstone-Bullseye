@@ -1,24 +1,23 @@
 const { Pool } = require('pg');
 
-// const pool = new Pool({
-//     connectionString: process.env.DATABASE_URL,
-//     user: process.env.POSTGRES_USER,
-//     host: process.env.POSTGRES_HOST,
-//     database: process.env.POSTGRES_DB,
-//     password: process.env.POSTGRES_PASSWORD,
-//     port: process.env.PORT,
-// });
-
 const pool = new Pool({
-    user: 'postgres',
-    host: '127.0.0.1',
-    database: 'bullseye',
-    password: 'bullseye',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
   });
+
+// const pool = new Pool({
+//     user: 'postgres',
+//     host: '127.0.0.1',
+//     database: 'bullseye',
+//     password: 'bullseye',
+//     port: 5432,
+//   });
 
 
 async function seeds() {
+    // Seeds the "accounts" table with data
     await pool.query(`INSERT INTO accounts (user_name, password, admin, email) VALUES 
         ('TargetMom', 'password1', false, 'targetmom@target.com'), 
         ('CameraPhreak', 'password2', false, 'photodragon@yahoo.com'),
@@ -29,10 +28,11 @@ async function seeds() {
             console.log('Accounts Seed failed');
         } else {
             console.log('Accounts Seed Successful');
-            // console.log(data);
+            // console.log(data);  <--- for data tracking purposes
         }
     });
 
+    // Seeds the "products" table with data
     await pool.query(`INSERT INTO products (name, price, description, highlights, dimensions, weight, choking, view, lens, data, megapixels, screen_size, battery, warranty, TCIN, UPC, origin) VALUES 
         ('Nikon D7500 DX-Format DSLR Camera (Body Only, Black)', 1299.95, '4.1 inches (H) x 5.3 inches (W) x 2.9 inches (D)', null, '4.1 inches (H) x 5.3 inches (W) x 2.9 inches (D)', 2.65, true, 'Optical', 'Nikon F-Mount Lenses', 0, 20.9, 3.2, true, null, 84158520, 018208015818, 'Made in the USA or imported'), 
         ('Nikon Z 50 DX-Format Mirrorless Camera w/ NIKKOR Z DX 16-50mm lens', 1249.95, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null),
@@ -74,9 +74,12 @@ async function seeds() {
             console.log(err);
         } else {
             console.log('Products Seed Successful');
-            // console.log(data);
+            // console.log(data);       <--- for data tracking purposes
         }
 
+        //Reviews and Questions table are nested within Products to make sure that both Accounts and Products are done before creating Questions and Reviews as they both have FKs dependant on the other two
+
+        // Seeds the "reviews" table with data
         pool.query(`INSERT INTO reviews (review, stars, date, title, helpful, account_id, product_id) VALUES 
             ('I bought this camera a couple of weeks ago and haven''t put it down since! The body is lightweight but sturdy and has a good feel in my hands. The price point is a little higher than I initially wanted to spend but I really do think it is worth it in the long run. Wish I could give it 10 stars!', 5, '12-Dec-2021', 'This camera ROCKS!!!', 3, 1, 1), 
             ('I''ve been looking for a solid camera without breaking the bank and I think this one fit the bill. Main reason for 4 stars and not 5 is because I wish it had a few more features for the price point, and I really think they could''ve at least given a cheap starter lens for how much you''re paying for it. Other than that, great camera!', 4, '19-Mar-2022', 'Solid, well built camera', 1, 3, 1),
@@ -87,10 +90,11 @@ async function seeds() {
                 console.log(err);
             } else {
                 console.log('Reviews Seed Successful');
-                // console.log(data);
+                // console.log(data);       <--- for data tracking purposes
             }
         });
 
+        // Seeds the "questions" table with data
         pool.query(`INSERT INTO questions (question, answer, date_question, date_answer, helpful, report, account_id, product_id) VALUES 
             ('Does this come with any extra battery packs?', 'Unfortunately no, it only comes with one battery and a charger.', '17-Nov-2022', '20-Nov-2022', 16, false, 4, 1), 
             ('How do I connect a lens to this camera?', null, '17-Jan-2023', null, 0, false, 5, 1)`, (err, data)=>{
@@ -98,7 +102,7 @@ async function seeds() {
                 console.log('Questions Seed failed');
             } else {
                 console.log('Questions Seed Successful');
-                // console.log(data);
+                // console.log(data);       <--- for data tracking purposes
             }
         });
     });
