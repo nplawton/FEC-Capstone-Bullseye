@@ -1,21 +1,23 @@
 const express = require('express');
-const { Pool } = require('pg');
-
 const app = express();
-const port = 3000;
+const { Pool } = require('pg');
+const cors = require('cors');
+const port = process.env.PORT || 3000;
+app.use(express.json());
+app.use(cors());
 
 const pool = new Pool({
-  user: 'username',
-  host: 'localhost',
-  database: 'database',
-  password: 'password',
+  user: 'postgres',
+  host: '127.0.0.1',
+  database: 'bullseye',
+  password: 'bullseye',
   port: 5432,
 });
 
 // Get all accounts
 app.get('/accounts', async (req, res) => {
   try {
-    const query = 'SELECT * FROM "Accounts"';
+    const query = 'SELECT * FROM accounts;';
     const result = await pool.query(query);
     res.json(result.rows);
   } catch (error) {
@@ -27,7 +29,7 @@ app.get('/accounts', async (req, res) => {
 // Get all questions
 app.get('/questions', async (req, res) => {
   try {
-    const query = 'SELECT * FROM "Questions"';
+    const query = 'SELECT * FROM questions;';
     const result = await pool.query(query);
     res.json(result.rows);
   } catch (error) {
@@ -39,7 +41,7 @@ app.get('/questions', async (req, res) => {
 // Get all reviews
 app.get('/reviews', async (req, res) => {
   try {
-    const query = 'SELECT * FROM "Reviews"';
+    const query = 'SELECT * FROM reviews;';
     const result = await pool.query(query);
     res.json(result.rows);
   } catch (error) {
@@ -51,7 +53,7 @@ app.get('/reviews', async (req, res) => {
 // Get all products
 app.get('/products', async (req, res) => {
     try {
-      const query = 'SELECT * FROM "Products"';
+      const query = 'SELECT * FROM products;';
       const result = await pool.query(query);
       res.json(result.rows);
     } catch (error) {
@@ -62,9 +64,9 @@ app.get('/products', async (req, res) => {
 
 // Get one account by ID
 app.get('/accounts/:id', async (req, res) => {
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
     try {
-      const query = 'SELECT * FROM "Accounts" WHERE id = $1';
+      const query = 'SELECT * FROM accounts WHERE id = $1;';
       const result = await pool.query(query, [id]);
       if (result.rows.length === 0) {
         res.status(404).json({ error: 'Account not found' });
@@ -79,9 +81,9 @@ app.get('/accounts/:id', async (req, res) => {
 
 // Get one review by ID
 app.get('/reviews/:id', async (req, res) => {
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
     try {
-      const query = 'SELECT * FROM "Reviews" WHERE id = $1';
+      const query = 'SELECT * FROM reviews WHERE id = $1;';
       const result = await pool.query(query, [id]);
       if (result.rows.length === 0) {
         res.status(404).json({ error: 'Review not found' });
@@ -95,10 +97,10 @@ app.get('/reviews/:id', async (req, res) => {
   });
 
 // Get one product by ID
-app.get('/product/:id', async (req, res) => {
-    const id = req.params.id;
+app.get('/products/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
     try {
-      const query = 'SELECT * FROM "Products" WHERE id = $1';
+      const query = 'SELECT * FROM products WHERE id = $1;';
       const result = await pool.query(query, [id]);
       if (result.rows.length === 0) {
         res.status(404).json({ error: 'Product not found' });
@@ -112,10 +114,10 @@ app.get('/product/:id', async (req, res) => {
   });
 
   // Get one question by ID
-app.get('/question/:id', async (req, res) => {
-    const id = req.params.id;
+app.get('/questions/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
     try {
-      const query = 'SELECT * FROM "Questions" WHERE id = $1';
+      const query = 'SELECT * FROM questions WHERE id = $1;';
       const result = await pool.query(query, [id]);
       if (result.rows.length === 0) {
         res.status(404).json({ error: 'Question not found' });
