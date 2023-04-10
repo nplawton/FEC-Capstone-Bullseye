@@ -1,17 +1,15 @@
-import React, { Fragment } from "react";
+import React from "react";
+import Footer from "./components/Footer";
 import './App.css';
-
 
 //components
 
-import Footer from "./components/Footer";
+
 function App() {
   return (
-    <Fragment>
-      <div className="container">
-        <Footer />
-      </div>
-    </Fragment>
+  <div className="footer-container">
+    <Footer />
+  </div>
   );
 }
 
