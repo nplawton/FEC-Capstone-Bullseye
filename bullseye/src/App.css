@@ -7,6 +7,13 @@
   right: 0;
   display:flex;
 }
+/* .Footer-div {
+  background-color: Red;
+  display: flex;
+} */
+/* .App {
+  text-align: center;
+}
 
 .static-header.hidden {
   top: -100px;
@@ -342,3 +349,5 @@
   margin-top: 2000px;
   background-color: #f8f9fa;
 }
+
+

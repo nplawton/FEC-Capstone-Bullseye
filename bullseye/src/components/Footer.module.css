@@ -1,0 +1,49 @@
+/* Specific Footer  component not global */
+.container {
+  display:flex;
+  background-color: #F7F7F7;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 12.500px;
+  margin-right: 12.500px;
+  border: 0;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1400px;
+}
+
+
+
+
+.bordering {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  font-size: 16px;
+  text-size-adjust: 100%;
+
+} 
+
+.tags {
+  display: flex;
+  /* box-sizing: border-box; */
+  flex-direction: column;
+  position: 0;
+  border: 0;
+  padding-top: 8px 16px;
+
+
+  overflow: visible;
+  line-height: inherit;
+  vertical-align: baseline;
+  position: relative;
+  text-decoration: none;
+
+}
+
+.tags:hover{
+  text-decoration: underline;
+}
