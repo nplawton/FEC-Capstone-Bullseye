@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ScrollHead from "./scrollHead";
 import StaticHead from "./staticHead"
+import './header.css';
+
 
 const Header = () => {
 
