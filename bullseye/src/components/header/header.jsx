@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ScrollHead from "./scrollHead";
 import StaticHead from "./staticHead"
-import './header.css';
-
+import './header.css'
 
 const Header = () => {
 
@@ -25,19 +24,24 @@ const Header = () => {
     }, []);
 
     return (
+      <>
         <header className="header-wrapper">
-
-        <StaticHead scrolled={scrolled}/>
+        <StaticHead 
+        scrolled={scrolled}
+        grey={grey}
+        setGrey={setGrey}
+        />
         <ScrollHead 
-            scrolled={scrolled}
-            grey={grey}
-            setGrey={setGrey}
+        scrolled={scrolled}
+        grey={grey}
+        setGrey={setGrey}
             />
         <div className={grey ? 'grey' : 'content'}>
             <p>content goes here</p>
         </div>
         <p className="test">this is so I can scroll, delete later</p>
         </header>
+      </>
     )
 }
 
