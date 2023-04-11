@@ -1,0 +1,411 @@
+.static-header {
+  background-color: rgb(204, 0, 0);
+  position: fixed;
+  height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display:flex;
+}
+
+.static-header.hidden {
+  top: -100px;
+  transition: 1.0s;
+}
+
+.static-header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.static-header-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.header-location {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12.5px;
+  display: flex;
+  color: white;
+  background-color: transparent;
+  padding: 10px 10px;
+  margin: 10px;
+  border: 1px dashed transparent;
+  align-items: center;
+}
+
+.header-location:hover {
+  background-color: rgb(157, 0, 0);
+  border-radius: 5px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header-location:active {
+  border: 1px dashed white;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.header-text:active {
+  border: 1px dashed white;
+}
+
+.header-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  display: block;
+  color: white;
+  padding: 5px 5px;
+  margin: 10px;
+  border: 1px dashed transparent;
+}
+
+.header-text:active {
+  border: 1px dashed white;
+}
+
+.header-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(204, 0, 0);
+  z-index: 100;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: transparent;
+  border-radius: 5px;
+  min-width: 145px;
+  margin-right: 25px;
+  display: flex;
+  height: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn:hover {
+  color: black;
+  background-color: rgb(237, 237, 237);
+}
+
+.chevron {
+  color: transparent;
+  margin-left: 3px;
+}
+
+.login-btn:hover .chevron {
+  color: rgb(51, 51, 51);
+}
+
+.login-btn:active {
+  border: 1px dashed black;
+}
+
+.login-btn:active .chevron {
+  color: rgb(51, 51, 51)
+}
+
+.scroll-header {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.375);
+
+}
+
+.scroll-interactive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+}
+
+.scroll-header.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  margin-left: 25px;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+.logo:active {
+  border: 1px dashed black;
+}
+
+.menu {
+  display: block;
+  margin-left: 40px;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+  .menu {
+    display: none;
+
+  }
+  .full-content {
+    display: flex;
+    height: auto;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .full-content .dropdown-text {
+    width: 200px;
+    height: 50px;
+    top: 90px;
+    left: 0px;
+  }
+
+  .dropdown-text {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .categories-list {
+    position: absolute;
+    color: rgb(51, 51, 51);
+    margin: 0;
+    font-size: 18px;
+    overflow: auto;
+    transform: none;
+    transition: height 0.3s ease;
+    padding: 0;
+    max-height: 800px;
+    width: 400px;
+    top: 80px;
+    border-radius: 0px 0px 8px 8px;
+    
+  }
+
+  .search-bar { 
+  margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .menu {
+
+    display: flex;
+    margin-left: 40px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+
+  .full-content {
+    display: none;
+  }
+
+  .search-bar {
+    margin-left: 25px;
+  }
+}
+
+.menu:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+.menu:active {
+  border: 1px dashed black;
+}
+
+.menu-expand {
+  width: 22px;
+  height: 22px;
+}
+
+.full-text {
+  padding: 13px 20px;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  white-space: nowrap;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-text:hover .chevron {
+  color: rgb(51, 51, 51);
+}
+
+.full-text:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+.full-text:active {
+  border: 1px dashed black;
+}
+
+
+
+.search-container {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.scroll-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+  padding: 5px 5px;
+  margin: 7px;
+  border: 1px dashed transparent;
+  display: inline-block;
+}
+
+.search-bar {
+  background-color: rgb(239, 233, 233);
+  position:relative;
+  width: 75%;
+  height: 45px;
+  border-radius: inherit;
+  border: none;
+}
+
+.search-bar::placeholder {
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+}
+
+.search-button {
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+  opacity: 0.7;
+  border-radius: inherit;
+}
+
+
+
+.cart-btn {
+  height: 44px;
+  width: 44px;
+  margin-right: 25px;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+.cart-btn:active {
+  border: 1px dashed black;
+}
+
+.cart {
+  color: rgb(51, 51, 51);
+  width: 24px;
+  height: 24px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+
+}
+
+.dropdown-content {
+  margin-top: 600px;
+  width: 200px;
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+.grey {
+  filter: opacity(0.5);
+  margin-top: 500px;
+}
+
+.test {
+  margin-top: 2000px;
+  background-color: #f8f9fa;
+}
+
+.sign-in-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #f1f1f1;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: right 0.3s ease-in-out;
+}
+
+.sign-in-menu.visible {
+  right: 0;
+}
+
+.location-menu {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  width: 300px;
+  height: 100%;
+  background-color: #f1f1f1;
+  z-index: 1001;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease-in-out;
+}
+
+.location-menu.visible {
+  left: 0;
+}
