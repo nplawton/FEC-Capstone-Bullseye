@@ -1,11 +1,15 @@
 import React from "react";
+import { ReviewProvider } from "../context/ReviewContext.js";
 import './Reviews.css';
+import ReviewContainer from "./ReviewContainer.jsx";
 
 function Reviews() {
+
+
     return (
-      <div>
-        
-      </div>
+      <ReviewProvider>
+        <ReviewContainer />
+      </ReviewProvider>
     );
   }
   
