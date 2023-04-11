@@ -1,7 +1,8 @@
 import React from "react";
 import Footer from "./components/Footer";
 import './App.css';
-import Header from "./components/header/header.jsx";
+import Header from "./components/header.jsx";
+import Reviews from "./components/reviews/Reviews";
 import CarouselContainer from './components/carousel/CarouselContainer.jsx';
 
 //components
@@ -14,7 +15,7 @@ function App() {
       {/* Photo portion */}
       {/* Add to cart */}
       <CarouselContainer />
-      {/* Review portion */}
+      <Reviews />
       <Footer />
     </div>
   );
