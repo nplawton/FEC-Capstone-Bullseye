@@ -24,7 +24,7 @@ const Carousel1 = (props) => {
     
     return (
         <div className="carousel">
-            <h2 className="main-carousel-header">Similar items</h2>
+            <h4 className="main-carousel-header">Similar items</h4>
             {(products.length <= 0) ? <div><Loading /></div> :
             <div className="carousel-main">
                 <Slider {...settings}>
