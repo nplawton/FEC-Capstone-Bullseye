@@ -18,5 +18,10 @@
 
 .review-card h4 {
     font-weight: bold;
-    font-size: 19px;
+    font-size: 18px;
+}
+
+.star {
+    stroke: #5a5858;
+    stroke-width: 2px;
 }

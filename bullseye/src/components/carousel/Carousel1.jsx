@@ -7,8 +7,8 @@ import './Carousel.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carousel1 = (props) => {
-    const products = props.prod
+const Carousel1 = ({prod}) => {
+    const products = prod;
 
     const settings = {
         accessibility: true,
