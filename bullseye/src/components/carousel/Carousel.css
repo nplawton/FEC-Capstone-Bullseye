@@ -1,7 +1,7 @@
 .carousel {
     margin: auto;
     margin-top: 100px;
-    width: 1540px;
+    width: 1340px;
 }
 
 .carousel-card {
@@ -42,9 +42,35 @@
 .main-carousel-header {
     text-align: center;
     font-family: Helvetica;
+    font-weight: bold;
 }
 
-.slick-prev:before,
-.slick-next:before {
-    color: red;
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+    width: 31px;
+    height: 31px;
+    font-family: Helvetica, sans-serif;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid #333333;
+    justify-content: center;
+}
+
+.slick-arrow.slick-prev::before,
+.slick-arrow.slick-next::before {
+    margin: auto;
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bolder;
+    color: #333333;
+}
+
+.slick-arrow.slick-prev:focus,
+.slick-arrow.slick-next:focus {
+    background-color: white;
+}
+
+.slick-arrow.slick-prev:hover,
+.slick-arrow.slick-next:hover {
+    background-color: lightgray;
 }
