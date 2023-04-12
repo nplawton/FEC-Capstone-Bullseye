@@ -15,6 +15,7 @@ function App() {
       <Header />
       <Photo />
       {/* Add to cart */}
+      <Addcart/>
       <CarouselContainer />
       <Reviews />
       <Footer />
