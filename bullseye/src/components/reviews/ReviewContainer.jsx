@@ -9,7 +9,7 @@ function ReviewContainer() {
     return (
       <div className="review-container">
         {reviews.map((review, index)=>(
-            <ReviewCard review={review} index={'review'+index}/>
+            <ReviewCard rev={review} index={'review'+index}/>
         ))}
       </div>
     );

@@ -7,6 +7,16 @@
 
 .review-card {
     display: block;
-    width: 1000px;
+    width: 1130px;
     margin: auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 18px;
+    font-family: Helvetica;
+}
+
+.review-card h4 {
+    font-weight: bold;
+    font-size: 19px;
 }
