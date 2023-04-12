@@ -2,6 +2,7 @@ import { CartProvider } from './cartContext';
 import { Cart } from './displayCart';
 import { AddToCartButton } from "./addtocart";
 import {useState, createContext, useEffect} from 'react'
+import ProductContext from "../context/ProductContext.js";
 
 function Addcart() {
   const items = [
