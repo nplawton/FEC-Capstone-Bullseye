@@ -1,17 +1,51 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import ProductContext from "../context/ProductContext.js";
+import StarRatings from 'react-star-ratings';
 import './Reviews.css';
 
-function ReviewCard({rev}) {
-    const { review } = rev;
+function ReviewCard(props) {
+    const [isHelpful, setIsHelpful] = useState(false);
+    const { review, stars, account_id, title } = props.rev;
+    let count = props.rev.helpful;
+    const { accounts } = useContext(ProductContext);
+    let user;
+
+    for (let i=0;i<accounts.length;i++) {
+        if (accounts[i].id == account_id) {
+            user = accounts[i].user_name;
+        } else {
+            continue;
+        }
+    }
+
+    function handleClickUp() {
+        count += 1;
+        setIsHelpful(true);
+    }
+
+    function handleClickDown() {
+        count -= 1;
+        setIsHelpful(true);
+    }
 
     return (
       <div className="review-card">
-        <h4 className="review-header">Review title goes here</h4>
-        <p className="review-user-date">user name - how long ago</p>
+        <h4 className="review-header">{!title ? 'Loading...' : title}</h4>
+        <StarRatings
+            rating={!stars ? 0 : stars}
+            starRatedColor="gold"
+            starEmptyColor="white"
+            numberOfStars={5}
+            starDimension="17px"
+            starSpacing="1px"
+            name="star-rating"
+        />
+        <p className="review-user-date">{!user ? 'Loading...' : user} - how long ago</p>
         <p className="review-description">{!review ? 'Loading...' : review}</p>
         <p className="review-helpful">Did you find this review helpful?</p>
-        <button className="button-helpful">Helpful</button>
-        <button className="button-not-helpful">Not helpful</button>
+        {(isHelpful === false) ? <div><button className="button-helpful" onClick={handleClickUp}>Helpful</button>
+        <button className="button-not-helpful" onClick={handleClickDown}>Not helpful</button></div>
+        : <p className="helpful-after">{count} people found this review helpful</p>}
         <p className="report-link">Report review</p>
 
       </div>
