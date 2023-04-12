@@ -46,11 +46,7 @@ const Header = () => {
           grey={grey}
           setGrey={setGrey}
           setIsSignInMenuVisible={setIsSignInMenuVisible}
-              />
-          <div className={grey ? 'grey' : 'content'}>
-              <p>content goes here</p>
-          </div>
-          <p className="test">this is so I can scroll, delete later</p>
+          />
         </header>
       </>
     )

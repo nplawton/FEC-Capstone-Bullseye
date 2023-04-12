@@ -1,0 +1,42 @@
+.main-container {
+    margin-top: 200px;
+    margin-left: 100px;
+}
+
+.photo-container {
+    height: 500px;
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    cursor: crosshair;
+    background-repeat: no-repeat;
+    background-size: 150%;
+    transition: background-position 0.1s ease;
+}
+
+.photo-container img {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.photo-container.zoom img {
+    transform: scale(1.5);
+}
+
+.list-products {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    max-width: 350px;
+    margin-top: 1rem;
+}
+
+.list-products li {
+    width: 22%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.photo {
+    width: 100%;
+}
