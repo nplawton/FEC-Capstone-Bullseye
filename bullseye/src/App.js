@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import './App.css';
 import Header from "./components/header/header.jsx";
 import CarouselContainer from './components/carousel/CarouselContainer.jsx';
-
+import Addcart from "./components/cart/cart";
 //components
 
 
@@ -13,6 +13,7 @@ function App() {
       <Header />
       {/* Photo portion */}
       {/* Add to cart */}
+      <Addcart/>
       <CarouselContainer />
       {/* Review portion */}
       <Footer />
