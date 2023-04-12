@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import ScrollHead from "./scrollHead";
 import StaticHead from "./staticHead"
+import Menus from "./menus"
 import './header.css'
 
 const Header = () => {
 
     const [scrolled, setScrolled] = useState(false);
     const [grey, setGrey] = useState(false)
-
+    const [isLocationMenuVisible, setLocationMenuVisible] = useState(false);
+    const [isSignInMenuVisible, setIsSignInMenuVisible] = useState(false);
+    
     useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
@@ -25,21 +28,25 @@ const Header = () => {
 
     return (
       <>
-        <header className="header-wrapper">
-        <StaticHead 
-        scrolled={scrolled}
-        grey={grey}
-        setGrey={setGrey}
+        <Menus
+          isLocationMenuVisible={isLocationMenuVisible}
+          setLocationMenuVisible={setLocationMenuVisible}
+          isSignInMenuVisible={isSignInMenuVisible}
+          setIsSignInMenuVisible={setIsSignInMenuVisible}
         />
-        <ScrollHead 
-        scrolled={scrolled}
-        grey={grey}
-        setGrey={setGrey}
-            />
-        <div className={grey ? 'grey' : 'content'}>
-            <p>content goes here</p>
-        </div>
-        <p className="test">this is so I can scroll, delete later</p>
+        <header className="header-wrapper">
+          <StaticHead 
+          scrolled={scrolled}
+          grey={grey}
+          setGrey={setGrey}
+          setLocationMenuVisible={setLocationMenuVisible}
+          />
+          <ScrollHead 
+          scrolled={scrolled}
+          grey={grey}
+          setGrey={setGrey}
+          setIsSignInMenuVisible={setIsSignInMenuVisible}
+          />
         </header>
       </>
     )
