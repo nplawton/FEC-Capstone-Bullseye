@@ -24,7 +24,7 @@ const Carousel3 = (props) => {
     
     return (
         <div className="carousel">
-            <h2 className="main-carousel-header">More to consider</h2>
+            <h4 className="main-carousel-header">More to consider</h4>
             {(products.length <= 0) ? <div><Loading /></div> :
             <div className="carousel-main">
                 <Slider {...settings}>
