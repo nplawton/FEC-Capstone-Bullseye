@@ -4,10 +4,11 @@ import StarRatings from 'react-star-ratings';
 import './Reviews.css';
 
 function ReviewCard(props) {
-    const [isHelpful, setIsHelpful] = useState(false);
-    const { review, stars, account_id, title } = props.rev;
-    let count = props.rev.helpful;
+    const { review, stars, account_id, helpful, title } = props.rev;
     const { accounts } = useContext(ProductContext);
+    const [count, setCount] = useState(helpful)
+    const [isHelpful, setIsHelpful] = useState(false);
+    
     let user;
 
     for (let i=0;i<accounts.length;i++) {
@@ -19,12 +20,12 @@ function ReviewCard(props) {
     }
 
     function handleClickUp() {
-        count += 1;
+        setCount(count + 1);
         setIsHelpful(true);
     }
 
     function handleClickDown() {
-        count -= 1;
+        setCount(count - 1);
         setIsHelpful(true);
     }
 
