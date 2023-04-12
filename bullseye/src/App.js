@@ -5,6 +5,7 @@ import Header from "./components/header/header.jsx";
 import Reviews from "./components/reviews/Reviews";
 import CarouselContainer from './components/carousel/CarouselContainer.jsx';
 import Photo from "./components/product-photo/product-photo";
+import Addcart from "./components/cart/cart"
 
 //components
 

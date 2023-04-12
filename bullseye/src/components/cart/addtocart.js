@@ -12,7 +12,7 @@ export const AddToCartButton = ({ item }) => {
   return (
     <div>
       <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-      <button onClick={handleAddToCart} style={{ backgroundColor: 'red', color: 'white' }}>
+      <button onClick={handleAddToCart} style={{ backgroundColor: 'red', color: 'white' , borderRadius: 5, borderColor: 'red', fontWeight: 'bold', boxShadow: 'none' }}>
         Add to Cart
       </button>
     </div>

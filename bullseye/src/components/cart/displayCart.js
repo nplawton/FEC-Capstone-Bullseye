@@ -8,13 +8,14 @@ export const Cart = () => {
 
   return (
     <div>
-      <h2>Cart</h2>
+      <h2>Added to cart</h2>
       <ul>
         {cartItems.map((cartItem) => (
           <li key={cartItem.id}>
             {cartItem.name}
             <button onClick={() => removeFromCart(cartItem)}>Remove</button>
           </li>
+          
         ))}
       </ul>
     </div>
