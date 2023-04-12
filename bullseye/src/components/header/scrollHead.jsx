@@ -6,16 +6,15 @@ import { AiOutlineMenu } from "react-icons/ai";
 import target from "./target.jpg";
 import SignInMenu from "./signIn";
 
-const ScrollHead = ({ scrolled, grey, setGrey }) => {
+const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [isSignInMenuVisible, setIsSignInMenuVisible] = useState(false);
   const [menuState, setmenuState] = useState({
     menu1: false,
     menu2: false,
     menu3: false,
     menu4: false,
-  }
+    }
   )
 
   
@@ -202,10 +201,7 @@ const ScrollHead = ({ scrolled, grey, setGrey }) => {
       </ul>}
       </div>
     </div>
-    <SignInMenu 
-      isSignInMenuVisible={isSignInMenuVisible} 
-      setIsSignInMenuVisible={setIsSignInMenuVisible}
-    />
+
     </>
   );
 };

@@ -4,9 +4,7 @@ import { IconContext } from "react-icons";
 import { BiBuildingHouse } from "react-icons/bi";
 import LocationMenu from "./location";
 
-const StaticHead = ({ grey, setGrey }) => {
-
-    const [isLocationMenuVisible, setLocationMenuVisible] = useState(false);
+const StaticHead = ({ grey, setGrey, setLocationMenuVisible }) => {
 
 
     const toggleMenu = () => {
@@ -50,10 +48,6 @@ const StaticHead = ({ grey, setGrey }) => {
                 <div className="header-text">
                     Find Stores
                 </div>
-                <LocationMenu
-                isLocationMenuVisible={isLocationMenuVisible}
-                setLocationMenuVisible={setLocationMenuVisible}
-                />
             </div>
         </div>
     )

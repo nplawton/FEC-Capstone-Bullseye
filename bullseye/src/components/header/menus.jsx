@@ -1,17 +1,23 @@
 import SignInMenu from "./signIn";
 import LocationMenu from "./location";
 
-const Menus = () => {
+const Menus = ({ isLocationMenuVisible, setLocationMenuVisible, isSignInMenuVisible, setIsSignInMenuVisible}) => {
+
 
     return (
       <div>
-        <Location />
-        <SignInMenu />
+        <LocationMenu 
+        isLocationMenuVisible={isLocationMenuVisible}
+        setLocationMenuVisible={setLocationMenuVisible}
+        />
+        <SignInMenu 
+        isSignInMenuVisible={isSignInMenuVisible}
+        setIsSignInMenuVisible={setIsSignInMenuVisible}
+        />
+        
       </div>
     );
   };
   
-  export default LocationMenu
+  export default Menus
 
-  const [isLocationMenuVisible, setLocationMenuVisible] = useState(false);
-  const [isSignInMenuVisible, setIsSignInMenuVisible] = useState(false);
