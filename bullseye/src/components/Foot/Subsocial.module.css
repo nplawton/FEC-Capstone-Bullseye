@@ -1,0 +1,194 @@
+/* //For the socials section footer */
+
+/* The main container is for the grey block */
+.maincontainer {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  line-height: 1.4285;
+  text-size-adjust: 100%;
+  background-color: rgb(51 ,51, 51);
+  color: white;
+  font-size: 16px;
+  line-height: 1.4285;
+  width: 100%;
+  box-sizing: inherit;
+  margin: 0px auto;
+  height: 11.5vh;
+}
+
+.contentwrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  fill: none;
+  height: 24px;
+  width: 24px;
+  background-color: rgb(102, 102, 102);
+  color: white;
+  font-size: 1.0rem;
+  margin-right: 1.5rem;
+}
+
+.social-icon:hover {
+  color: rgb(102, 102, 102);
+} 
+
+.links {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1.5rem;
+  overflow: visible;
+  color: white;
+  font-size: 12px;
+}
+.links a {
+  text-decoration: none;
+  color: #757575;
+  margin-bottom: 0.5rem;
+}
+
+.links span {
+  display: inline-flex;
+  font-size: 12px;
+  color: white;
+  margin-top: 1rem;
+}
+
+
+
+
+/* The content wrapper is for the block inside the grey block that contains the content */
+/* .contentwrapper {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 0px auto;
+  max-width: auto;
+  padding: 16px ;
+  outline: 0px;
+  max-width: 1400px; 
+   box-sizing: inherit; 
+  font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px; 
+  text-size-adjust: 100%;
+  color: rgb(51 ,51, 51); 
+   justify-content: space-between;
+  justify-content: center;
+  overflow-x: hidden;
+   -webkit-box-pack: justify;
+  -webkit-box-align: center; 
+   align-items: center;
+  width: 100%; 
+}  */
+
+/* .socialmedia { */
+  /* display: inline-flex;
+  padding: 24px;
+  /* -webkit-box-pack: justify; */
+  /* justify-content: space-between;
+  outline: 0px;
+  box-sizing: inherit;
+  color: white;
+  font-size: 16px;
+  text-size-adjust: 100px;
+  width: 280px;
+  height: 40px;
+  align-items: center; */ 
+/* }
+
+.socialmedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin: 16px;
+}
+
+
+/* The styles for each media link, color and*/
+/* .attributes {
+   display: inline-flex; 
+  border-radius: 20%;
+
+   justify-content: space-between;
+  
+  height: 40%;
+  width: 40%;
+  color: white;
+  overflow: visible;
+   vertical-align: baseline; 
+  background-color: grey; 
+
+} */
+
+
+/* .block2{
+  display: flex;
+} */
+
+
+
+
+
+
+
+
+
+
+/* New stuff */
+/* .maincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  height: 11.5vh;
+  text-size-adjust: 100%;
+  background-color: rgb(51 ,51, 51);
+  }
+  
+  .contentwrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    color: #757575;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+  
+  .social-icon:hover {
+    color: white;
+    background-color: #757575;
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1.5rem;
+  } */
+
+/* 
+END */
