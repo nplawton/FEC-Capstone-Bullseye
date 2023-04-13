@@ -7,7 +7,8 @@
 
 .review-card {
     display: block;
-    width: 1130px;
+    width: 1200px;
+    height: 220px;
     margin: auto;
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -17,6 +18,7 @@
 }
 
 .review-card h4 {
+    width: 100%;
     font-weight: bold;
     font-size: 18px;
 }
@@ -24,4 +26,168 @@
 .star {
     stroke: #5a5858;
     stroke-width: 2px;
+    width: 100%;
+}
+
+.review-user-date {
+    font-size: 12px;
+}
+.inner-review-container {
+    display: inline-flex;
+}
+
+.review-description {
+    width: 678px;
+    font-size: 14px;
+    margin-right: 50px;
+}
+
+.inner-review-secondary-container {
+    display: inline-block;
+    padding-top: 20px;
+    padding-right: 10px;
+    width: 450px;
+}
+
+.review-helpful {
+    font-size: 12px;
+    display: inline-flex;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 12px;
+    color: #5b5b5b;
+}
+
+.button-div {
+    width: 275px;
+}
+
+.button-helpful,
+.button-not-helpful {
+    background-color: white;
+    border: 1px solid #5b5b5b;
+    border-radius: 5px;
+    color: #414141;
+    width: 120px;
+    height: 32px;
+    margin-right: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.button-not-helpful {
+    margin-right: 20px;
+}
+
+.helpful-after {
+    display: inline;
+    width: 260px;
+    font-size: 14px;
+}
+
+.report-link-div {
+    display: inline;
+
+}
+
+.report-link {
+    float: right;
+    text-align: right;
+    padding-right: 8px;
+    width: 125px;
+    color: #5b5b5b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.report-link:hover {
+    color: #414141;
+}
+
+.review-filter {
+    display: block;
+    height: 145px;
+    margin: 50px auto;
+    padding-left: 33%;
+}
+
+.guest-rating-header {
+    padding-left: 20%;
+    margin-bottom: 27px;
+    font-family: Helvetica;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.review-rating-bars {
+    display: inline-block;
+    width: 360px;
+    height: 150px;
+    margin-right: 12px;
+}
+
+.bars-container {
+    display: inline-block;
+    width: inherit;
+    height: 8px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.percentage-review {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 11px;
+    color: #737373;
+    margin: 0px 0px;
+    height: 12px;
+    width: 13%;
+    text-decoration: underline;
+}
+
+.rating-bar {
+    display: inline-block;
+    width: 50%;
+}
+
+.percentage-number {
+    display: inline-block;
+    font-family: Arial;
+    font-size: 11px;
+    color: #737373;
+    margin: 0px;
+    padding-left: 25px;
+    height: 12px;
+    width: 13%;
+    text-decoration: underline;
+}
+
+.div-to-center {
+    display: inline-block;
+    margin: 0px auto;
+}
+
+.guest-ratings-container {
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.big-star-rating {
+    display: inline-block;
+    
+}
+
+.avg-rating-number {
+    text-align: center;
+    font-family: Arial;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.number-reviews {
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 14px;
+    color: #515151;
 }
