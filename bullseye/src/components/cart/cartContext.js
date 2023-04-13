@@ -7,10 +7,18 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
-  };
-
+// this function adds item to the cart and updates the quantity
+  function addToCart(item, quantity) {
+    const index = cartItems.findIndex((i) => i.id === item.id);
+    if (index >= 0) {
+      const newCartItems = [...cartItems];
+      newCartItems[index].quantity += quantity;
+      setCartItems(newCartItems);
+    } else {
+      setCartItems((prevCartItems) => [...prevCartItems, { ...item, quantity }]);
+    }
+  }
+  
   // this will remove items from cart
   const removeFromCart = (item) => {
     const updatedCartItems = cartItems.filter((cartItem) => cartItem.id !== item.id);
@@ -23,3 +31,4 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+

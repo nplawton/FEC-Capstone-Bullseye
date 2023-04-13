@@ -12,6 +12,7 @@ import Addcart from "./components/cart/cart";
 import CarouselContainer from './components/carousel/CarouselContainer.jsx';
 import Photo from "./components/product-photo/product-photo";
 
+
 //components
 
 
