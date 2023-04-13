@@ -63,6 +63,7 @@ const Photo = () => {
                             >
                             <img className="photo" src={nikon2}></img>
                             </li>
+                            <div className="closer">Share your pic</div>
                         </ul>
                     <div
                         className="photo-container"

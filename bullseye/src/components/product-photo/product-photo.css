@@ -1,3 +1,7 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .main-container {
     margin-top: 200px;
     display: flex;
@@ -51,8 +55,8 @@
   }
   
   .photo-container {
-    height: 500px;
-    width: 500px;
+    height: 740px;
+    width: 740px;
     background-repeat: no-repeat;
     cursor: crosshair;
   }
@@ -87,4 +91,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .closer {
+    background-color: rgba(128, 128, 128, 0.089);
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid transparent;
+    
   }

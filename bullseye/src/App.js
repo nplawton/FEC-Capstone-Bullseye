@@ -7,6 +7,7 @@ import Reviews from "./components/reviews/Reviews";
 import Addcart from "./components/cart/cart";
 import CarouselContainer from './components/carousel/CarouselContainer.jsx';
 import Photo from "./components/product-photo/product-photo";
+import About from "./components/about/about.jsx";
 
 //components
 
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Photo />
       <Addcart/>
+      <About />
       <CarouselContainer />
       <Reviews />
       <Footer />
