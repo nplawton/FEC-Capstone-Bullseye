@@ -6,25 +6,25 @@ const End =() =>{
     <div className={EndCSS.container}>
       <div className={EndCSS.contentwrap}>
       <p className={EndCSS.text}>
-        <h6>Terms</h6>
+        <h6 className={EndCSS.text}> Terms</h6>
       </p>
       <p className={EndCSS.text}>
-        <h6>CA Supply Chain</h6>
+        <h6 className={EndCSS.text}>CA Supply Chain</h6>
       </p>
       <p className={EndCSS.text}>
-        <h6>Privacy</h6>
+        <h6 className={EndCSS.text}>Privacy</h6>
       </p>
       <p className={EndCSS.text}>
-        <h6>CA Privacy Rights</h6>
+        <h6 className={EndCSS.text}>CA Privacy Rights</h6>
       </p>
       <p className={EndCSS.text}>
-        <h6>Your Privacy Choices - CA</h6>
+        <h6 className={EndCSS.text}>Your Privacy Choices - CA</h6>
       </p>
       <p className={EndCSS.text}>
-        <h6>Interest Based Ads</h6>
+        <h6 className={EndCSS.text}>Interest Based Ads</h6>
       </p>
       <p className={EndCSS.text}>
-        <h6>TM & © 2023 Target Brands, Inc. - CA</h6>
+        <h6 className={EndCSS.text}>TM & © 2023 Target Brands, Inc. - CA</h6>
       </p>
       </div>
     </div>
