@@ -4,10 +4,11 @@ import StarRatings from 'react-star-ratings';
 import './Reviews.css';
 
 function ReviewCard(props) {
-    const [isHelpful, setIsHelpful] = useState(false);
-    const { review, stars, account_id, title } = props.rev;
-    let count = props.rev.helpful;
+    const { review, stars, account_id, helpful, title } = props.rev;
     const { accounts } = useContext(ProductContext);
+    const [count, setCount] = useState(helpful)
+    const [isHelpful, setIsHelpful] = useState(false);
+    
     let user;
 
     for (let i=0;i<accounts.length;i++) {
@@ -19,12 +20,12 @@ function ReviewCard(props) {
     }
 
     function handleClickUp() {
-        count += 1;
+        setCount(count + 1);
         setIsHelpful(true);
     }
 
     function handleClickDown() {
-        count -= 1;
+        setCount(count - 1);
         setIsHelpful(true);
     }
 
@@ -41,13 +42,18 @@ function ReviewCard(props) {
             name="star-rating"
         />
         <p className="review-user-date">{!user ? 'Loading...' : user} - how long ago</p>
-        <p className="review-description">{!review ? 'Loading...' : review}</p>
-        <p className="review-helpful">Did you find this review helpful?</p>
-        {(isHelpful === false) ? <div><button className="button-helpful" onClick={handleClickUp}>Helpful</button>
-        <button className="button-not-helpful" onClick={handleClickDown}>Not helpful</button></div>
-        : <p className="helpful-after">{count} people found this review helpful</p>}
-        <p className="report-link">Report review</p>
-
+        <div className="inner-review-container">
+            <p className="review-description">{!review ? 'Loading...' : review}</p>
+            <div className="inner-review-secondary-container">
+                <p className="review-helpful">Did you find this review helpful?</p>
+                <div className="report-link-div">
+                    {(isHelpful === false) ? <><button className="button-helpful" onClick={handleClickUp}>Helpful</button>
+                    <button className="button-not-helpful" onClick={handleClickDown}>Not helpful</button></>
+                    : <p className="helpful-after">{count} people found this review helpful</p>}
+                    <p className="report-link">Report review</p>
+                </div>
+            </div>
+        </div>
       </div>
     );
   }
