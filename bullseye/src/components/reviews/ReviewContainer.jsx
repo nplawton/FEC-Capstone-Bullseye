@@ -9,7 +9,7 @@ function ReviewContainer() {
     return (
       <div className="review-container">
         {reviews.map((review, index)=>(
-            <ReviewCard rev={review} key={'review'+index}/>
+            <ReviewCard rev={review} key={'review'+index} random={Math.floor((Math.random() * 19) + 1)}/>
         ))}
       </div>
     );
