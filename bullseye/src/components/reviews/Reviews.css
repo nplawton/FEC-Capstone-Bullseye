@@ -104,6 +104,10 @@
     color: #414141;
 }
 
+.report-link:active {
+    text-decoration: none;
+}
+
 .review-filter {
     display: block;
     height: 145px;
@@ -265,6 +269,8 @@
     transform: translate(-12px, 20px);
     font-family: Helvetica;
     font-size: 16px;
+    animation-name: dropdown2;
+    animation-duration: 0.4s;
 }
 
 .recent-drop-modal {
@@ -276,9 +282,21 @@
     border: 1px solid #696666;
     border-radius: 5px;
     padding: 10px;
-    transform: translate(-4px, 20px);
     font-family: Helvetica;
     font-size: 16px;
+    transform: translate(-4px, 20px);
+    animation-name: dropdown1;
+    animation-duration: 0.4s;
+}
+
+@keyframes dropdown1 {
+    from {transform: translate(-4px, 0px);}
+    to {transform: translate(-4px, 20px);}
+}
+
+@keyframes dropdown2 {
+    from {transform: translate(-12px, 0px);}
+    to {transform: translate(-12px, 20px);}
 }
 
 .rating-label {

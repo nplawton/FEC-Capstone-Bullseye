@@ -14,7 +14,7 @@ function AllRatingsDropdown() {
 
     return (
         <div className='drop-down-block'>
-            <button className="drop-down-menu" id="ratings-down-menu" onClick={handleClick}>filter by <b>all ratings</b></button>
+            <button className="drop-down-menu" id="ratings-down-menu" onClick={handleClick}>filter by <b>all ratings ᐯ</b></button>
             {showDropdown && createPortal(
                 <AllRatingsContent className="all-ratings-table" onClose={handleClick} />,
                 dropDownMenu

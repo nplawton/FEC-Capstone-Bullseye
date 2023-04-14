@@ -7,7 +7,7 @@ import './Reviews.css';
 
 function MostRecentDropdown() {
     const [showDropdown, setShowDropdown] = useState(false);
-    const dropDownMenu = document.getElementById("recent-drop-holder")
+    const dropDownMenu = document.getElementById("recent-drop-holder");
 
     function handleClick() {
         setShowDropdown(!showDropdown ? true : false);
@@ -15,7 +15,7 @@ function MostRecentDropdown() {
 
     return (
         <div className='drop-down-block'>
-            <button className="drop-down-menu" id="recent-down-menu" onClick={handleClick}>sort by <b>most recent</b></button>
+            <button className="drop-down-menu" id="recent-down-menu" onClick={handleClick}>sort by <b>most recent ᐯ</b></button>
             {showDropdown && createPortal(
                 <MostRecentContent className="most-recent-table" onClose={handleClick} />,
                 dropDownMenu

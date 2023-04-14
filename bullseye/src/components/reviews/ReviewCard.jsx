@@ -4,11 +4,13 @@ import StarRatings from 'react-star-ratings';
 import './Reviews.css';
 
 function ReviewCard(props) {
-    const { review, stars, account_id, helpful, title } = props.rev;
+    const { review, stars, account_id, helpful, title, date } = props.rev;
+    const { random } = props;
     const { accounts } = useContext(ProductContext);
     const [count, setCount] = useState(helpful)
+    const [reported, setReported] = useState(false)
     const [isHelpful, setIsHelpful] = useState(false);
-    const random = Math.floor((Math.random() * 19) + 1);
+    
     
     let user;
 
@@ -18,6 +20,23 @@ function ReviewCard(props) {
         } else {
             continue;
         }
+    }
+
+    function getMonths(time) {
+        let millis = (1000 * 3600 * 24)
+        let revDate = new Date(time);
+        let revDateMS = (revDate.getMilliseconds() / millis);
+        console.log(revDateMS)
+        let today = (Date.now() / millis);
+        let daysBetween = Math.abs(revDateMS - today);
+        let months = Math.floor(daysBetween / 32);
+        return months;
+        
+    }
+
+    function handleClick(e) {
+        setReported(!reported ? true : false);
+        (!reported ? e.target.style.textDecoration = "none" : e.target.style.textDecoration = "underline");
     }
 
     function handleClickUp() {
@@ -51,7 +70,7 @@ function ReviewCard(props) {
                     {(isHelpful === false) ? <><button className="button-helpful" onClick={handleClickUp}>Helpful</button>
                     <button className="button-not-helpful" onClick={handleClickDown}>Not helpful</button></>
                     : <p className="helpful-after">{count} people found this review helpful</p>}
-                    <p className="report-link">Report review</p>
+                    <p className="report-link" onClick={handleClick}>{!reported ? 'Report review' : 'Review reported'}</p>
                 </div>
             </div>
         </div>
