@@ -10,7 +10,7 @@
     margin: 4px 8px;
     padding: 12px;
     width: 178px;
-    height: 244px;
+    height: 284px;
     border: .5px solid rgb(211, 211, 211, 0.1);
     border-radius: 8px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
@@ -22,8 +22,8 @@
 }
 
 .imageUrl {
-    height: 164px;
-    width: 164px;
+    height: 144px;
+    width: 144px;
 }
 
 .carousel-card-price {
@@ -34,7 +34,7 @@
 
 .carousel-card-text {
     overflow: hidden;
-    height: 52.5px;
+    height: 60px;
     margin: 0px;
     padding: 0px;
 }

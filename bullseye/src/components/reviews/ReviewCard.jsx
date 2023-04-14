@@ -8,6 +8,7 @@ function ReviewCard(props) {
     const { accounts } = useContext(ProductContext);
     const [count, setCount] = useState(helpful)
     const [isHelpful, setIsHelpful] = useState(false);
+    const random = Math.floor((Math.random() * 19) + 1);
     
     let user;
 
@@ -41,7 +42,7 @@ function ReviewCard(props) {
             starSpacing="1px"
             name="star-rating"
         />
-        <p className="review-user-date">{!user ? 'Loading...' : user} - how long ago</p>
+        <p className="review-user-date">{!user ? 'Loading...' : user} - {random} months ago</p>
         <div className="inner-review-container">
             <p className="review-description">{!review ? 'Loading...' : review}</p>
             <div className="inner-review-secondary-container">
