@@ -13,6 +13,9 @@ const About = () => {
     const [showMore, setShowMore] = useState(false);
     const [activeTab, setActiveTab] = useState("details")
 
+
+    const nikon = products[0]
+
     const handleShowMoreClick = () => {
       setShowMore(!showMore);
     };
@@ -55,7 +58,7 @@ const About = () => {
             <div className="content-container">
                 {activeTab === 'details' && (
                     < Details 
-                    products={products}
+                    nikon={nikon}
                     showMore={showMore}
                     />
                 )}
@@ -69,11 +72,23 @@ const About = () => {
                     />
                 )}
             </div>
+                {activeTab === "details" ? (
+                    <button className="details-button" onClick={handleShowMoreClick}>
+                    {showMore ? (
+                <>
+                    <span>Show</span>&nbsp;
+                    <span>Less</span>
+                </>
+                ) : (
+                <>
+                    <span>Show</span>&nbsp;
+                    <span>More</span>
+                </>
+                )}
+            </button>
+            ) : null}
         </div>
-        <button onClick={handleShowMoreClick}>
-            
-            {showMore ? "Show Less" : "Show More"}
-        </button> 
+
     </>
     )
 }
