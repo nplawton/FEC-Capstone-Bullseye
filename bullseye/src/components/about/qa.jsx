@@ -9,8 +9,8 @@ const QA = () => {
             <div>
                 <p>insert stuff here</p>
             </div>
-            <h3 className="shipping-title">Return details</h3>
-            <button>add review here</button>
+            <h3 className="shipping-title"></h3>
+            <button className="ask-question">Ask a question</button>
         </div>
     </>
     )
