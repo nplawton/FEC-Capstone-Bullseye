@@ -1,9 +1,8 @@
 .sidebar {
-    /* Add other existing styles here */
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
+    right: -400px;
+    width: 400px;
     height: 100%;
     background-color: white;
     padding: 20px;
@@ -14,14 +13,12 @@
     flex-direction: column;
     align-items: flex-end;
   }
-  
   .sidebar.visible {
     right: 0;
   }
   .sidebarText {
     color: red;
   }
-  
   .close-btn {
     font-size: 1.5rem;
     font-weight: bold;
@@ -40,4 +37,45 @@
     
     padding: 10px 22px;
   }
-  
+  .cart2-text{
+    color: rgb(204, 0, 0);
+    font: helvetica;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .cart3-text{
+    color: rgb(0, 145, 0);
+    font: helvetica;
+    font-size: 15px;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .cartphoto{
+    margin-right: 1px;
+  }
+  .cartcontainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: medium;
+    
+  }
+  .cartdescription-text {
+    margin: 0;
+    
+  }
