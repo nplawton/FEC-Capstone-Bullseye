@@ -23,7 +23,7 @@ const Details = ( { showMore, nikon } ) => {
                         <div className="details-text-highlights-text">
                             51-point AF system with 15 cross-type sensors and group-area AF paired with up to 8 fps continuous shooting capability
                         </div>
-                        </li>
+                    </li>
                     <li className="details-text-highlights">
                         <div className="details-text-highlights-text">
                             4K Ultra HD and 1080p Full HD video with stereo sound, power aperture control, auto ISO, 4K UHD Time-Lapse and more

@@ -9,6 +9,8 @@ function ReviewFilter() {
     const { reviews } = useContext(ReviewContext);
     const [averages, setAverages] = useState([]);
     
+    // This function does the math for the "Guest Rating & Reviews" progress bars.
+    // Parses the reviews for their star ratings then returns an array with each percentage of the total [5 star, 4 star, 3 star, 2 star, 1 star]
     function getStarCount() {
       let five = 0;
       let four = 0;
@@ -43,6 +45,7 @@ function ReviewFilter() {
       return finalAverage;
     }
 
+    // This will update the percentages every time the 'reviews' state from ReviewContext gets updated
     useEffect(() => {
       const newAverage = getStarCount()
       setAverages(newAverage);
