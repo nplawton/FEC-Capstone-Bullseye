@@ -8,14 +8,6 @@ const pool = new Pool({
     }
   });
 
-//comment this out before pushing to dev
-// const pool = new Pool({
-//     user: 'postgres',
-//     host: 'localhost',
-//     database: 'bullseye',
-//     password: 'bullseye',
-//     port: 5432,
-//   });
 
 async function migration() {
     await pool.query(`DROP TABLE IF EXISTS accounts CASCADE`, (err, data)=>{
