@@ -4,7 +4,7 @@ import MostRecentContent from './MostRecentContent.jsx';
 import './Reviews.css';
 
 
-
+// This component has proper visibility but no functionality for sorting the reviews
 function MostRecentDropdown() {
     const [showDropdown, setShowDropdown] = useState(false);
     const dropDownMenu = document.getElementById("recent-drop-holder");

@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Carousel2 = ({prod}) => {
     const products = prod;
 
+    // Settings variable used to populate the "Slider" components from Slick
     const settings = {
         accessibility: true,
         dots: true,

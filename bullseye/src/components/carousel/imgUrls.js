@@ -1,3 +1,4 @@
+// These are the image urls from Target website used to populate the carousels
 const imageUrls = [
     'https://target.scene7.com/is/image/Target/GUEST_a2460c59-b23b-4ad4-a2a8-6240849e4c4c?qlt=85&fmt=webp&hei=325&wid=325',
     'https://target.scene7.com/is/image/Target/GUEST_8e8d1ca9-45e3-49ee-89b3-43183fa849f7?qlt=85&fmt=webp&hei=325&wid=325',

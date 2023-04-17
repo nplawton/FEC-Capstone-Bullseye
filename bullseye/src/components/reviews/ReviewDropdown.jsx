@@ -5,12 +5,13 @@ import './Reviews.css';
 
 
 function ReviewDropdown() {
+
+    // These functions handle the pop-up that happens when you mousover the "Write a review" button
     function handleMouseEnter() {
         const revGraphic = document.getElementById('rev-graphic');
         revGraphic.style.opacity = 1;
         revGraphic.style.transform = 'translateY(-72px)';
     }
-
     function handleMouseLeave() {
         const revGraphic = document.getElementById('rev-graphic');
         revGraphic.style.opacity = 0;

@@ -1,7 +1,7 @@
 import React from 'react'
   
 const RatingBar = ({bgcolor,progress,height}) => {
-     
+    // These are CSS settings for the progress bars for "Guest Ratings & Reviews" element
     const Parentdiv = {
         height: height,
         width: '70%',
