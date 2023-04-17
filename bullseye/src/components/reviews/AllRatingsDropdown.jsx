@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import AllRatingsContent from './AllRatingsContent.jsx'
 import './Reviews.css';
 
-
+// This component has proper visibility but no functionality for sorting the reviews
 function AllRatingsDropdown() {
     const [showDropdown, setShowDropdown] = useState(false);
     const dropDownMenu = document.getElementById("ratings-drop-holder")

@@ -1,6 +1,8 @@
 import React from "react";
 import './Carousel.css';
 
+// This is a generic component used with ternary operators to make a 
+// temporary placeholder for when an API call is slow to load
 const Loading = () => {
         
     return (

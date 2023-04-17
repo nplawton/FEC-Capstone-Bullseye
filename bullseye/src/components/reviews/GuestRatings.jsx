@@ -9,7 +9,7 @@ function GuestRatings() {
     const {reviews} = useContext(ReviewContext);
     const [stars, setStars] = useState(0)
 
-
+    // This function gets the average star rating based on all reviews of the product. Will be between 1 and 5.
     const averageStars = function(arr) {
         let count = 0;
         if (arr.length > 0) {
@@ -20,6 +20,7 @@ function GuestRatings() {
         return count/arr.length;
     }
 
+    // This will update the average every time the 'reviews' state from ReviewContext gets updated
     useEffect(() => {
         const finalAverage = averageStars(reviews);
         setStars(finalAverage);

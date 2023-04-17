@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Carousel1 = ({prod}) => {
     const products = prod;
 
+    // Settings variable used to populate the "Slider" components from Slick
     const settings = {
         accessibility: true,
         dots: true,
@@ -50,7 +51,7 @@ const Carousel1 = ({prod}) => {
                         <Card image={imageUrls[6]} prod={products[7]} />
                     </div>
                     <div>
-                    <Card image={imageUrls[7]} prod={products[8]} />
+                        <Card image={imageUrls[7]} prod={products[8]} />
                     </div>
                     <div>
                         <Card image={imageUrls[8]} prod={products[9]} />
