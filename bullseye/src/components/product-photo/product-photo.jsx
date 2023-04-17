@@ -39,9 +39,9 @@ const Photo = () => {
 
     const detailComponents = prodDetails.map((detail, index) => (
         <React.Fragment key={index}>
-        <span className="detail-text">{detail}</span>
-        {index < prodDetails.length - 1 && <span className="separator"> / </span>}
-      </React.Fragment>
+            <span className="detail-text">{detail}</span>
+            {index < prodDetails.length - 1 && <span className="separator"> / </span>}
+        </React.Fragment>
         
     ))
     return (

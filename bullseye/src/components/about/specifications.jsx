@@ -3,6 +3,9 @@ import React, { useState, useRef, useEffect } from "react";
 
 const Specification = ( { nikon } ) => { 
 
+
+    // for future programers that look at this. I'm sorry, had to hard code a lot of this.
+
     return (
         <div className="specification-container">
             <h2 className= 'details-header-specification'>Specifications</h2>

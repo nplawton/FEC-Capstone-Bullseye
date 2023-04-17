@@ -108,7 +108,7 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
               setGrey(true)
               toggleMenu("menu1")
             }}
-            ref={categoriesButtonRef} id="categories-button"
+            ref={categoriesButtonRef}
             >
               Categories  
               <IconContext.Provider value={{ className: "chevron"}}> 
@@ -157,9 +157,6 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
 
           <form className="search-container">
             <input type="text" className="search-bar" placeholder="  Search"></input>
-            <button type="submit" className="search-button">
-              <i className="fa fa-search"></i> 
-            </button>
           </form>
 
           <button className="login-btn" onClick={toggleLogin}>
@@ -180,28 +177,52 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
             </IconContext.Provider>
           </button>
 
-      {menuState.menu1 && <ul ref={categoriesListRef} className="categories-list">
-        {categories.map((category) => (<li key={category} className="dropdown-text"> {category}         
-        </li>))}
+      {menuState.menu1 && 
+        <ul ref={categoriesListRef} className="categories-list">
+          {categories.map((category,index) => (
+            <>
+            <li key={category} className="dropdown-text"> 
+              {category}       
+            </li>
+            <div key={index} className="separator-menu"></div>
+        </> ))}
       </ul>}
 
-      {menuState.menu2 && <ul ref={dealsListRef} className="categories-list">
-        {deals.map((deal) => (<li key={deal} className="dropdown-text"> {deal}         
-        </li>))}
+      {menuState.menu2 && 
+        <ul ref={dealsListRef} className="categories-list">
+          {deals.map((deal,index) => (
+            <>
+              <li key={deal} className="dropdown-text"> 
+                {deal}         
+              </li>
+              <div key={index} className="separator-menu"></div>
+          </>
+        ))}
       </ul>}
 
       {menuState.menu3 && <ul ref={whatsNewListRef} className="categories-list">
-        {whatsNew.map((what) => (<li key={what} className="dropdown-text"> {what}         
-        </li>))}
+        {whatsNew.map((what,index) => (
+        <>
+          <li key={what} className="dropdown-text"> 
+            {what}         
+          </li>
+          <div key={index} className="separator-menu"></div>
+        </>
+        ))}
       </ul>}
 
       {menuState.menu4 && <ul ref={pickupListRef} className="categories-list">
-        {pickup.map((pickup) => (<li key={pickup} className="dropdown-text"> {pickup}         
-        </li>))}
+        {pickup.map((pickup,index) => (
+          <>
+            <li key={pickup} className="dropdown-text"> 
+              {pickup}         
+            </li>
+            <div key={index} className="separator-menu"></div>
+          </>
+          ))}
       </ul>}
       </div>
     </div>
-
     </>
   );
 };
