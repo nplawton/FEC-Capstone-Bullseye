@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import Details from "./details";
-import QA from "./qa"
+import QuestionAnswer from "./qa"
 import Shipping from "./shipping"
 import ProductContext from "../context/ProductContext.js";
+import { QAProvider } from "../context/questionContext.js";
 
 
 import "./about.css"
@@ -62,10 +63,13 @@ const About = () => {
                     showMore={showMore}
                     />
                 )}
-                {activeTab === 'qa' && (
-                    < QA
-                    />
-                )}
+                <QAProvider
+                >
+                    {activeTab === 'qa' && (
+                        < QuestionAnswer
+                        />
+                    )}
+                </QAProvider>
                 {activeTab === 'shipping' && (
                     < Shipping
                     products={products}

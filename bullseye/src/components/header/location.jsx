@@ -9,7 +9,11 @@ const LocationMenu = ({ isLocationMenuVisible, setLocationMenuVisible }) => {
         className={`location-menu ${isLocationMenuVisible ? "visible" : ""}`}
         onClick={() => setLocationMenuVisible(false)}
       >
-        look at this content
+        <strong>Update Location</strong>
+      
+        <div className="separator-menu"></div>
+        <div>Inventory and delivery options will change based on location.</div>
+        <input placeholder="Zip code"></input>
       </div>
     );
   };
