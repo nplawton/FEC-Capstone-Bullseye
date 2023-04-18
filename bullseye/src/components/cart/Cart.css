@@ -47,10 +47,15 @@
     font-size: 26px;
   }
   .cart2-text{
-    color: rgb(204, 0, 0);
+    color: rgb(0, 0, 0);
     font: helvetica;
     font-weight: bold;
     font-size: 25px;
+  }
+  .cart2b-text{
+    color: rgb(0, 0, 0);
+    font: helvetica;
+    font-size: 16px;
   }
   .cart3-text{
     color: rgb(0, 145, 0);

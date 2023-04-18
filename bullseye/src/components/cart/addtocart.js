@@ -9,6 +9,7 @@ export const AddToCartButton = ({ item, quantity, toggleSidebar }) => {
   const [itemCount, setItemCount] = useState(0);
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
+  
   const handleClick = (newQuantity) => {
     addToCart(item, parseInt(newQuantity));
     setSidebarVisible(true);
@@ -74,11 +75,11 @@ export const AddToCartButton = ({ item, quantity, toggleSidebar }) => {
         <button className="close-btn" onClick={toggleSidebar2}>×</button> {/* Add the close button */}
          <ul>
           {cartItems.map((cartItem) => {
-            // const totalPrice = (cartItem.price * cartItem.quantity).toFixed(2);
+            const totalPrice = (cartItem.price * cartItem.quantity).toFixed(2);
 
             return (
               <>
-              <img alt="D7500" src="store1.png" width="100px"/>
+              <img alt="D7500" src="./store1.png" width="100px"/>
              
               <div className='cart4-text'>Added to cart</div>
               <div key={cartItem.id}>
@@ -93,7 +94,7 @@ export const AddToCartButton = ({ item, quantity, toggleSidebar }) => {
                   <span style={{fontSize: '9',color: '#B85300'}}> choking hazard - small parts. Not for children under 3 yrs. </span>
                 </div>
                 </div>
-                 {/* Quantity: {cartItem.quantity} - Total: ${totalPrice} */}
+                 Quantity: {cartItem.quantity} - Total: ${totalPrice}
                 {/* <button onClick={() => removeFromCart(cartItem)}>Remove</button> */}
               </div>
               </>
