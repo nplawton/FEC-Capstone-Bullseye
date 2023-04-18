@@ -37,7 +37,7 @@ function Addcart() {
                 <div className="cart2-text">${item.price}</div>
                 <div className="purchased-text">When purchased online</div>
                 <StarRatings
-                rating={3.5} // <-- Replace with the actual rating value
+                rating={4} // <-- Replace with the actual rating value
                 starRatedColor="orange" // <-- Customize the star color
                 starDimension="20px" // <-- Customize the star size
                 starSpacing="2px" // <-- Customize the space between stars
