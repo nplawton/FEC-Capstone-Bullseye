@@ -11,6 +11,13 @@ const Header = () => {
     const [isLocationMenuVisible, setLocationMenuVisible] = useState(false);
     const [isSignInMenuVisible, setIsSignInMenuVisible] = useState(false);
     
+
+    const closeAll = () => {
+      setGrey(false);
+      setLocationMenuVisible(false);
+      setIsSignInMenuVisible(false);
+    }
+
     useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
@@ -28,11 +35,14 @@ const Header = () => {
 
     return (
       <>
+        
         <Menus
           isLocationMenuVisible={isLocationMenuVisible}
           setLocationMenuVisible={setLocationMenuVisible}
           isSignInMenuVisible={isSignInMenuVisible}
           setIsSignInMenuVisible={setIsSignInMenuVisible}
+          grey={grey}
+          setGrey={setGrey}
         />
         <header className="header-wrapper">
           <StaticHead 
@@ -48,6 +58,7 @@ const Header = () => {
           setIsSignInMenuVisible={setIsSignInMenuVisible}
           />
         </header>
+        <div className={`overlay ${grey ? 'visible' : ''}`} onClick={closeAll} />
       </>
     )
 }

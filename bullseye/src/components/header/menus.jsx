@@ -1,7 +1,7 @@
 import SignInMenu from "./signIn";
 import LocationMenu from "./location";
 
-const Menus = ({ isLocationMenuVisible, setLocationMenuVisible, isSignInMenuVisible, setIsSignInMenuVisible}) => {
+const Menus = ({ isLocationMenuVisible, setLocationMenuVisible, isSignInMenuVisible, setIsSignInMenuVisible, grey, setGrey}) => {
 
 
     return (
@@ -9,10 +9,14 @@ const Menus = ({ isLocationMenuVisible, setLocationMenuVisible, isSignInMenuVisi
         <LocationMenu 
         isLocationMenuVisible={isLocationMenuVisible}
         setLocationMenuVisible={setLocationMenuVisible}
+        grey={grey}
+        setGrey={setGrey}
         />
         <SignInMenu 
         isSignInMenuVisible={isSignInMenuVisible}
         setIsSignInMenuVisible={setIsSignInMenuVisible}
+        grey={grey}
+        setGrey={setGrey}
         />
         
       </div>

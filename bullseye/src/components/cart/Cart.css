@@ -1,3 +1,10 @@
+.cart-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -15,6 +22,7 @@
   }
   .sidebar.visible {
     right: 0;
+    z-index: 1001;
   }
   .sidebarText {
     color: red;
@@ -47,10 +55,10 @@
     font-size: 26px;
   }
   .cart2-text{
-    color: rgb(204, 0, 0);
+    color: rgb(0, 0, 0);
     font: helvetica;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 24px;
   }
   .cart3-text{
     color: rgb(0, 145, 0);
@@ -73,6 +81,7 @@
   .overlay.visible {
     opacity: 1;
     pointer-events: auto;
+    z-index: 1000;
   }
   .cartphoto{
     margin-right: 1px;
@@ -131,3 +140,16 @@
     }
   }
   
+
+  .cart-dropdown {
+    text-align: center;
+    width: 90px;
+    height: 44px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .purchased-text {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }

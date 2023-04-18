@@ -2,14 +2,21 @@ import React, { useState, useEffect, useRef } from "react";
 
 
 
-const SignInMenu = ({ isSignInMenuVisible, setIsSignInMenuVisible }) => {
+const SignInMenu = ({ isSignInMenuVisible, setIsSignInMenuVisible, setGrey }) => {
+
+  const closeSignIn = () => {
+    setIsSignInMenuVisible(false);
+    setGrey(false);
+  }
 
     return (
         <div
           className={`sign-in-menu ${isSignInMenuVisible ? "visible" : ""}`}
-          onClick={() => setIsSignInMenuVisible(false)}
         >
-          <div><strong>Account</strong></div>
+          <div className="sign-in-head">
+            <div><strong>Account</strong></div>
+            <button className="sign-in-close-btn" onClick={closeSignIn}>×</button>
+          </div>
           <div className="separator-menu"></div>
           <div>Sign in</div>
           <div className="separator-menu"></div>

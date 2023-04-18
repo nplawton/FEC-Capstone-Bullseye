@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import { ProductProvider } from "./components/context/ProductContext.js";
 import Footer from "./components/Foot/Footer.js";
 import Signup from "./components/Foot/Signup.js";
@@ -14,15 +14,17 @@ import Photo from "./components/product-photo/product-photo";
 import About from "./components/about/about.jsx";
 
 
-//components
 
 
 function App() {
+
   return (
     <ProductProvider>
       <Header />
-      <Photo />
-      <Addcart/>
+      <div className="photo-cart-merg">
+        <Photo />
+        <Addcart/>
+      </div>
       <About />
       <CarouselContainer />
       <Reviews />
