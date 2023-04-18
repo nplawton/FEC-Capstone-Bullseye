@@ -4,6 +4,7 @@ import { AddToCartButton } from "./addtocart";
 import ProductContext from "../context/ProductContext.js";
 import { useContext, useState } from "react";
 import Loading from "../carousel/Loading.jsx";
+import StarRatings from 'react-star-ratings';
 
 
 function Addcart() {
@@ -26,12 +27,19 @@ function Addcart() {
             ) : (
             items.map((item) => (
               <div key={item.id}>
-                <h3>{item.name}</h3>
+             
+                {/* <h3>{item.name}</h3> */}
                 <p className="cart2-text">${item.price}</p>
                 <p>When purchased online</p>
-               
+                <StarRatings
+                rating={3.5} // <-- Replace with the actual rating value
+                starRatedColor="orange" // <-- Customize the star color
+                starDimension="20px" // <-- Customize the star size
+                starSpacing="2px" // <-- Customize the space between stars
+                />
                 <p>Ship to 98004</p>
-                <p className="cart3-text">Get it by Tue</p>
+                <p className="cart3-text">Get it by Tue, Apr 24</p>
+                <p className="cart2b-text">Free shipping - Exclusions Apply.</p>
                 {/* Dropdown menu to update quantity */}
                 {!itemAdded && (
                 <>
