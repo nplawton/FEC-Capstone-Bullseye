@@ -32,6 +32,7 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
 
   const toggleLogin = () => {
     setIsSignInMenuVisible((prevState) => !prevState);
+    setGrey(true)
   };
 
 
@@ -103,22 +104,20 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
         </button>
       
         <div className="full-content">
-          <button className="full-text" 
-            onClick={() => { 
-              setGrey(true)
-              toggleMenu("menu1")
-            }}
-            ref={categoriesButtonRef}
-            >
-              Categories  
-              <IconContext.Provider value={{ className: "chevron"}}> 
-                <FiChevronDown />
-                </IconContext.Provider>
-          </button>
-
+            <button className="full-text" 
+              onClick={() => { 
+                toggleMenu("menu1")
+              }}
+              ref={categoriesButtonRef}
+              >
+                Categories  
+                <IconContext.Provider value={{ className: "chevron"}}> 
+                  <FiChevronDown />
+                  </IconContext.Provider>
+            </button>
+            
           <button className="full-text"
             onClick={() => { 
-              setGrey(true)
               toggleMenu("menu2")
             }}
             ref={dealsButtonRef}
@@ -130,7 +129,6 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
           </button>
           <button className="full-text"
             onClick={() => { 
-              setGrey(true)
               toggleMenu("menu3")
             }}
             ref={whatsNewButtonRef}
@@ -143,7 +141,6 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
 
           <button className="full-text"
             onClick={() => { 
-              setGrey(true)
               toggleMenu("menu4")
             }}
             ref={pickupButtonRef}
@@ -179,47 +176,40 @@ const ScrollHead = ({ scrolled, grey, setGrey, setIsSignInMenuVisible }) => {
 
       {menuState.menu1 && 
         <ul ref={categoriesListRef} className="categories-list">
-          {categories.map((category,index) => (
-            <>
-            <li key={category} className="dropdown-text"> 
-              {category}       
-            </li>
-            <div key={index} className="separator-menu"></div>
-        </> ))}
+          {categories.map((category, index) => (
+            <React.Fragment key={index}>
+              <li className="dropdown-text">{category}</li>
+              <div className="separator-menu"></div>
+            </React.Fragment>
+          ))}
       </ul>}
 
       {menuState.menu2 && 
         <ul ref={dealsListRef} className="categories-list">
-          {deals.map((deal,index) => (
-            <>
-              <li key={deal} className="dropdown-text"> 
-                {deal}         
-              </li>
-              <div key={index} className="separator-menu"></div>
-          </>
-        ))}
+          {deals.map((deal, index) => (
+            <React.Fragment key={index}>
+              <li className="dropdown-text">{deal}</li>
+              <div className="separator-menu"></div>
+            </React.Fragment>
+          ))}
       </ul>}
 
       {menuState.menu3 && <ul ref={whatsNewListRef} className="categories-list">
-        {whatsNew.map((what,index) => (
-        <>
-          <li key={what} className="dropdown-text"> 
-            {what}         
-          </li>
-          <div key={index} className="separator-menu"></div>
-        </>
+          {whatsNew.map((what, index) => (
+            <React.Fragment key={index}>
+              <li className="dropdown-text">{what}</li>
+              <div className="separator-menu"></div>
+            </React.Fragment>
         ))}
       </ul>}
 
       {menuState.menu4 && <ul ref={pickupListRef} className="categories-list">
-        {pickup.map((pickup,index) => (
-          <>
-            <li key={pickup} className="dropdown-text"> 
-              {pickup}         
-            </li>
-            <div key={index} className="separator-menu"></div>
-          </>
-          ))}
+        {pickup.map((pickup, index) => (
+          <React.Fragment key={index}>
+            <li className="dropdown-text">{pickup}</li>
+            <div className="separator-menu"></div>
+          </React.Fragment>
+        ))}
       </ul>}
       </div>
     </div>

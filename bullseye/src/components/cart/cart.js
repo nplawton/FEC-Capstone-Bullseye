@@ -18,40 +18,48 @@ function Addcart() {
     setSidebarVisible(!sidebarVisible);
   };
 
+
+  const getDeliveryDate = () => {
+    const today = new Date();
+    const deliveryDate = new Date(today.setDate(today.getDate() + 7));
+    return deliveryDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  };
+
   return (
     <div>
       <CartProvider>
-        <div>
+        <div className="cart-main-container">
           {!items[0] ? (
             <Loading />
             ) : (
             items.map((item) => (
               <div key={item.id}>
-             
-                {/* <h3>{item.name}</h3> */}
-                <p className="cart2-text">${item.price}</p>
-                <p>When purchased online</p>
+                <div className="cart2-text">${item.price}</div>
+                <div className="purchased-text">When purchased online</div>
                 <StarRatings
                 rating={3.5} // <-- Replace with the actual rating value
                 starRatedColor="orange" // <-- Customize the star color
                 starDimension="20px" // <-- Customize the star size
                 starSpacing="2px" // <-- Customize the space between stars
                 />
-                <p>Ship to 98004</p>
-                <p className="cart3-text">Get it by Tue, Apr 24</p>
+                <p className="ship-date-cart"><strong>Ship to 78023</strong></p>
+                <div className="cart3-text">Get it by {getDeliveryDate()}</div>
                 <p className="cart2b-text">Free shipping - Exclusions Apply.</p>
+                <div className="purchased-text">This item isn't sold in stores</div>
+                <p className="cart3-text"></p>
+                
                 {/* Dropdown menu to update quantity */}
                 {!itemAdded && (
                 <>
-                <label htmlFor="quantity">Qty: </label>
                 <select
+                className="cart-dropdown"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
                 >
                   {/* Drop Down menu of quantity to be added to cart */}
                   {[...Array(2)].map((_, index) => (
                     <option key={index + 1} value={index + 1}>
-                      {index + 1}
+                      Qty: {index + 1}
                     </option>
                   ))}
                 </select>
