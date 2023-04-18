@@ -79,7 +79,7 @@ export const AddToCartButton = ({ item, quantity, toggleSidebar }) => {
 
             return (
               <>
-              <img alt="D7500" src="./store1.png" width="100px"/>
+              {/* <img alt="D7500" src="./store1.png" width="100px"/> */}
              
               <div className='cart4-text'>Added to cart</div>
               <div key={cartItem.id}>
