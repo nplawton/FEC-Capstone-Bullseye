@@ -7,7 +7,7 @@ export const QAProvider = ({children}) => {
     
     useEffect(() => {
         (async () => {
-          const response = await fetch('https://fec-deploy.onrender.com/questions');
+          const response = await fetch('http://localhost:8000/questions');
           const questions = await response.json();
           setQA(questions);
           

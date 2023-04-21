@@ -1,4 +1,4 @@
-FROM node:18.7.0
+FROM redis:latest
 
 WORKDIR /app
 

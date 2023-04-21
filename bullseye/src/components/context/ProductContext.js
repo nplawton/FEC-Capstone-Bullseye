@@ -8,7 +8,7 @@ export const ProductProvider = ({children}) => {
     
     useEffect(() => {
         (async () => {
-          const response = await fetch('https://fec-deploy.onrender.com/products');
+          const response = await fetch('http://localhost:8000/products');
           const prods = await response.json();
           setProducts(prods);
           console.log(prods);
@@ -18,7 +18,7 @@ export const ProductProvider = ({children}) => {
 
     useEffect(() => {
         (async () => {
-          const response = await fetch('https://fec-deploy.onrender.com/accounts');
+          const response = await fetch('http://localhost:8000/accounts');
           const accts = await response.json();
           setAccounts(accts);
           console.log(accts);

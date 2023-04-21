@@ -2,17 +2,24 @@ const express = require('express');
 const app = express();
 const { Pool } = require('pg');
 const cors = require('cors');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 app.use(express.json());
 app.use(cors());
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-      rejectUnauthorized: false
-  }
-});
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//       rejectUnauthorized: false
+//   }
+// });
 
+const pool = new Pool({
+  user: 'postgres',
+  host: '127.0.0.1',
+  database: 'bullseye',
+  password: 'bullseye',
+  port: 5432,
+});
 
 // Get all accounts
 app.get('/accounts', async (req, res) => {
@@ -52,15 +59,32 @@ app.get('/reviews', async (req, res) => {
 
 // Get all products
 app.get('/products', async (req, res) => {
-    try {
-      const query = 'SELECT * FROM products;';
-      const result = await pool.query(query);
-      res.json(result.rows);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Something went wrong' });
-    }
-  });
+  const query = 'SELECT users.*'
+});
+
+// app.get('/products', async (req, res) => {
+//     try {
+//       const query = 'SELECT * FROM products LIMIT 50;';
+//       const result = await pool.query(query);
+//       res.json(result.rows);
+//       console.log(result.rows);
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ error: 'Something went wrong' });
+//     }
+//   });
+
+  // app.get('/products', async (req, res) => {
+  //   try {
+  //     const query = 'SELECT * FROM products;';
+  //     const result = await pool.query(query);
+  //     res.json(result.rows);
+  //     console.log(result.rows);
+  //   } catch (error) {
+  //     console.error(error);
+  //     res.status(500).json({ error: 'Something went wrong' });
+  //   }
+  // });
 
 // Get one account by ID
 app.get('/accounts/:id', async (req, res) => {

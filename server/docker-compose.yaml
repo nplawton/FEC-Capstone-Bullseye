@@ -16,6 +16,13 @@ services:
             PGDATA: /var/lib/postgresql/data
         ports:
             - "5432:5432"
+    
+    redis:
+        container_name: bullseye-redis
+        image: redis:latest
+        restart: always
+        ports: 
+            - "6379:6379"
 
 
         
