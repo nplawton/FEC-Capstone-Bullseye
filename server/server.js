@@ -59,7 +59,16 @@ app.get('/reviews', async (req, res) => {
 
 // Get all products
 app.get('/products', async (req, res) => {
-  const query = 'SELECT users.*'
+  try{
+    const client = await pool.connect();
+    const result = await client.query(`SELECT * FROM products LIMIT 100`);
+    const product = result.rows;
+    res.status(200).json(product);
+    client.release();
+  }catch (err){
+    console.error(err);
+    res.status(500).json({message: 'Internal server error'});
+  }
 });
 
 // app.get('/products', async (req, res) => {
