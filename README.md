@@ -31,7 +31,7 @@
 
 ## Usage
 ---
-> This project is designed for educational purposes to teach the optimazation of one of the three components of full-stack project. Working to optimize the server side application ran the project through a Redis Docker container and validated the results using K6.
+> This project is designed for educational purposes to teach the optimazation of one of the three components of full-stack project. Working to optimize the server side of the application ran the project through a Redis Docker container and validated the results using K6.
 
 ## Screenshot
 ---
